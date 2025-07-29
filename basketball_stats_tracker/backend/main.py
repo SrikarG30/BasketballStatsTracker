@@ -22,7 +22,11 @@ import os
 from typing import List, Dict
 
 
-DATA_PATH = os.path.join(os.path.dirname(__file__), "data", "sample_box_scores.csv")
+# By default the application loads a sample dataset built from real NBA
+# playoff data (Boston vs. Miami on April 21, 2024). If you wish to
+# experiment with your own data, place a CSV file in ``backend/data``
+# with the same header structure and update this constant accordingly.
+DATA_PATH = os.path.join(os.path.dirname(__file__), "data", "real_box_scores.csv")
 
 
 class PlayerStats(BaseModel):

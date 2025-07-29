@@ -34,7 +34,7 @@ sample file follow the same ordering and types.
 basketball_stats_tracker/
 ├── backend/
 │   ├── data/
-│   │   └── sample_box_scores.csv  # example data used by the API
+│   │   └── real_box_scores.csv    # example data used by the API
 │   └── main.py                   # FastAPI application
 ├── frontend/
 │   ├── index.html                # entry point for the React app
@@ -100,9 +100,13 @@ hosted on port 3000 can freely fetch data from port 8000.
 
 ## Extending this prototype
 
-* Replace `sample_box_scores.csv` with a real box score dataset. An example
-  of the header and early rows from a genuine NBA playoff box score file
-  show the type of information you would get【479577837952955†L0-L5】.
+* Replace `real_box_scores.csv` with your own box score data. The file
+  provided in this repository contains statistics from a real NBA playoff
+  game (Boston Celtics vs. Miami Heat on 21 April 2024) and demonstrates
+  the expected column order. To load a different game, create a CSV
+  following the same header in `backend/data/` and update the
+  `DATA_PATH` constant in `backend/main.py` accordingly. The header format
+  was derived from a genuine NBA box‑score dataset【479577837952955†L0-L5】.
 * Introduce a play‑by‑play dataset to build accurate shot charts and
   momentum graphs. You could augment the API to accept a game ID and
   return individual shot locations and timestamps, then use Chart.js or
